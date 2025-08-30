@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1A7431", // green shade for sidebar, buttons
+      main: "#42794A", // green shade for sidebar, buttons
     },
     secondary: {
       main: "#04142B", // dark blue (you mentioned earlier)
@@ -15,7 +15,7 @@ const theme = createTheme({
     },
     text: {
       primary: "#04142B",
-      secondary: "#5f6c7b",
+      secondary: "#94CA9C",
     },
     success: {
       main: "#4CAF50",
@@ -43,7 +43,7 @@ const theme = createTheme({
     header: "0px 5px 20px rgba(0, 0, 0, 0.05)", // custom shadow
   },
   shape: {
-    borderRadius: 10,
+    borderRadius: 4,
   },
 });
 

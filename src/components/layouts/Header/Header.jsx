@@ -11,6 +11,7 @@ export default function Header() {
         bgcolor: "white",
         color: "black",
         boxShadow: (theme) => theme.shadows.header,
+        px: 4,
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: 70 }}>
