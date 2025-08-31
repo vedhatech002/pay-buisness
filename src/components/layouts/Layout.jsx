@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
 
-      <Box sx={{ display: "flex", flexGrow: 1, px: 4, pt: 6, pb: 8 }}>
+      <Box sx={{ display: "flex", flexGrow: 1, pl: 4, pt: 6, pb: 8 }}>
         <Box
           sx={{
             width: drawerWidth,
@@ -30,7 +30,7 @@ export default function Layout({ children }) {
             bgcolor: "white",
             borderRadius: 3,
             boxShadow: 2,
-            p: 3,
+            px: 1,
             height: "calc(100vh - 80px)",
             overflowY: "auto",
           }}
