@@ -1,5 +1,5 @@
 import { Grid, Box } from "@mui/material";
-import BannerCard from "./BannerCard";
+import BannerCard from "../../components/common/BannerCard";
 import StatsGrid from "./StatsCard";
 import { SummaryCard, ProfileCard, QRCodeCard } from "./DashBoardCards";
 

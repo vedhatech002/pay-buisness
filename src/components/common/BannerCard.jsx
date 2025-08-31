@@ -1,13 +1,14 @@
 // src/components/home/BannerCard.jsx
 import { Box, Button, Card, Typography } from "@mui/material";
 import BillPaymentBanner from "../../assets/bill-payment.svg?react";
+import PosBanner from "../../assets/pos.svg?react";
+import { BANNER_CTA, BANNER_SUBTITLE } from "../../utils/constant";
 
-export default function BannerCard({
-  title = "Pay ₹1/month* for the QPay POS Device",
-  subtitle = "One device for accepting all modes of payments",
-  ctaLabel = "Download App Now!",
-  onCta = () => {},
-}) {
+export default function BannerCard({ isPosBanner }) {
+  const handleCta = () => {
+    console.log("Download now!");
+  };
+
   return (
     <Card
       elevation={0}
@@ -24,10 +25,8 @@ export default function BannerCard({
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           minHeight: 200,
-          //   position: "relative",
         }}
       >
-        {/* LEFT SIDE (60%) */}
         <Box
           sx={{
             flex: "0 0 60%",
@@ -57,13 +56,13 @@ export default function BannerCard({
             variant="body2"
             sx={{ opacity: 0.9, color: (t) => t.palette.text.secondary }}
           >
-            {subtitle}
+            {BANNER_SUBTITLE}
           </Typography>
 
           <Button
             size="small"
             variant="contained"
-            onClick={onCta}
+            onClick={handleCta}
             sx={{
               mt: 1,
               bgcolor: "common.white",
@@ -77,7 +76,7 @@ export default function BannerCard({
               },
             }}
           >
-            {ctaLabel}
+            {BANNER_CTA}
           </Button>
         </Box>
 
@@ -89,10 +88,14 @@ export default function BannerCard({
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            p: 2,
+            // p: 2,
           }}
         >
-          <BillPaymentBanner style={{ maxWidth: "100%", height: "auto" }} />
+          {isPosBanner ? (
+            <PosBanner style={{ maxWidth: "100%", height: "auto" }} />
+          ) : (
+            <BillPaymentBanner style={{ maxWidth: "100%", height: "auto" }} />
+          )}
         </Box>
       </Box>
     </Card>
