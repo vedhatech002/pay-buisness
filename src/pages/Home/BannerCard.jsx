@@ -37,8 +37,6 @@ export default function BannerCard({
             py: 2,
             display: "flex",
             flexDirection: "column",
-            // justifyContent: "center",
-            // diagonal cut only for desktop
             clipPath: {
               xs: "none",
               md: "polygon(0 0, 100% 0, 80% 100%, 0% 100%)",

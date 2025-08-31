@@ -15,7 +15,7 @@ export default function Layout({ children }) {
             borderRadius: (theme) => theme.shape.borderRadius,
             color: "white",
             boxShadow: 3,
-            height: "calc(100vh - 80px)", // subtract header height
+            height: "calc(120vh - 80px)", // subtract header height
             mr: 2,
           }}
         >
@@ -31,7 +31,7 @@ export default function Layout({ children }) {
             borderRadius: 3,
             boxShadow: 2,
             px: 1,
-            height: "calc(100vh - 80px)",
+            height: "calc(120vh - 80px)",
             overflowY: "auto",
           }}
         >
