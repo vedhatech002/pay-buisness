@@ -15,8 +15,8 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import HistoryTable from "./HistoryTable";
-import SettleNowDialog from "./SettleNowDialog";
+import HistoryTable from "./components/HistoryTable";
+import SettleNowDialog from "./components/SettleNowDialog";
 
 const statusOptions = ["Pending", "Failed", "Success"];
 
@@ -44,7 +44,6 @@ const History = () => {
 
   return (
     <Box p={3}>
-      {/* Header */}
       <Box display="flex" justifyContent="space-between" mb={2}>
         <Typography variant="h6" fontWeight="bold">
           Settlement History
@@ -52,7 +51,6 @@ const History = () => {
         <Button variant="outlined">Download Statement</Button>
       </Box>
 
-      {/* Search + Filter Row */}
       <Box display="flex" alignItems="center" gap={2} mb={3}>
         <TextField
           variant="outlined"
@@ -86,7 +84,6 @@ const History = () => {
           <FilterListIcon />
         </IconButton>
 
-        {/* Filter Popover */}
         <Popover
           open={open}
           anchorEl={anchorEl}
@@ -105,7 +102,6 @@ const History = () => {
         </Popover>
       </Box>
 
-      {/* Settle Now Banner */}
       <Paper
         variant="outlined"
         sx={{
@@ -143,7 +139,6 @@ const History = () => {
         </Button>
       </Paper>
 
-      {/* Table */}
       <HistoryTable searchQuery={searchQuery} filterStatus={filterStatus} />
       <SettleNowDialog open={isDialogOpen} onClose={handleDialog} />
     </Box>

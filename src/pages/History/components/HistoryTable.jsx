@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Chip, Button, TableCell, Typography } from "@mui/material";
 
-import PhonePeLogo from "../../assets/phonepe.svg";
-import PaytmLogo from "../../assets/paytm.svg";
-import GPayLogo from "../../assets/google-pay-logo.svg";
+import PhonePeLogo from "../../../assets/phonepe.svg";
+import PaytmLogo from "../../../assets/paytm.svg";
+import GPayLogo from "../../../assets/google-pay-logo.svg";
 
-import CustomTable from "../../components/common/CustomTable";
-import CustomPagination from "../../components/common/CustomPagination";
-import { AuthServices } from "../../api/AuthServices";
+import CustomTable from "../../../components/common/CustomTable";
+import CustomPagination from "../../../components/common/CustomPagination";
+import { AuthServices } from "../../../api/AuthServices";
+import { useLoading } from "../../../context/LoadingContext";
 
 const logoMap = {
   PhonePe: PhonePeLogo,
@@ -29,7 +30,9 @@ const columns = [
   "STATUS",
   "DETAILS",
 ];
+
 const HistoryTable = ({ searchQuery, filterStatus }) => {
+  const { dispatch } = useLoading();
   const [transactions, setTransactions] = useState([]);
   const [page, setPage] = useState(1);
   const rowsPerPage = 5;
@@ -49,17 +52,18 @@ const HistoryTable = ({ searchQuery, filterStatus }) => {
   );
 
   const getTransactions = async () => {
+    dispatch({ type: "SET_LOADING", payload: true });
     try {
       const data = await AuthServices.getTransactions();
       setTransactions(data);
-      console.log("fetched data", data);
+      dispatch({ type: "SET_LOADING", payload: false });
     } catch (error) {
+      dispatch({ type: "SET_LOADING", payload: false });
       console.error(error);
     }
   };
 
   useEffect(() => {
-    console.log("effect called");
     getTransactions();
   }, []);
 

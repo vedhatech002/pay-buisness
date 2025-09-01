@@ -1,4 +1,3 @@
-// components/FeatureDisplaySection.js
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
@@ -20,7 +19,6 @@ const FeatureDisplaySection = ({ title, items }) => {
           color: "text.text",
           fontWeight: 500,
           fontSize: 14,
-          //   textTransform: "uppercase",
           marginBottom: 2,
         }}
       >
@@ -38,7 +36,7 @@ const FeatureDisplaySection = ({ title, items }) => {
               justifyContent: "center",
             }}
           >
-            <Box sx={{ fontSize: 28, color: "#2e7d32" }}>{item.icon}</Box>
+            <Box sx={{ fontSize: 28, color: "text.secon" }}>{item.icon}</Box>
             <Typography
               variant="caption"
               align="center"

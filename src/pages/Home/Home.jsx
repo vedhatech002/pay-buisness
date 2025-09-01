@@ -2,14 +2,14 @@ import { Grid, Box } from "@mui/material";
 import BannerCard from "../../components/common/BannerCard";
 import StatsGrid from "./StatsCard";
 import { SummaryCard, ProfileCard, QRCodeCard } from "./DashBoardCards";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <Box px={2}>
-      {/* Banner */}
       <BannerCard />
 
-      {/* Stats */}
       <StatsGrid />
 
       <Grid container spacing={2}>
@@ -17,7 +17,7 @@ export default function Home() {
           <ProfileCard />
         </Grid>
         <Grid size={6}>
-          <QRCodeCard />
+          <QRCodeCard action={() => navigate("/qr")} />
         </Grid>
         <Grid size={6}>
           <SummaryCard
@@ -29,7 +29,7 @@ export default function Home() {
               { name: "Ibrahim", date: "23 Oct, 09:15 AM", amount: 90 },
             ]}
             buttonLabel="Settle Now"
-            onButtonClick={() => console.log("Settle Now clicked")}
+            onButtonClick={() => navigate("/history")}
           />
         </Grid>
         <Grid size={6}>

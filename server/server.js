@@ -5,15 +5,14 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-// Sample mock data
 const transactions = require(path.join(__dirname, "db.json")).transactions;
 
-// Set up API route for transactions
 app.get("/api/transactions", (req, res) => {
-  res.json(transactions);
+  setTimeout(() => {
+    res.json(transactions);
+  }, 2000);
 });
 
-// Run server
 const port = 5000;
 app.listen(port, () => {
   console.log(`Mock API server running on http://localhost:${port}`);

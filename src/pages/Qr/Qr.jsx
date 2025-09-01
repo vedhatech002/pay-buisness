@@ -36,12 +36,8 @@ const Qr = () => {
         Manage QR/POS
       </Typography>
       <Grid container spacing={2}>
-        {/* Left Side - Main QR */}
         <Grid size={6}>
-          <MainQrCodeCard
-          // qrValue="9876543210@apay"
-          // merchantName="Merchant Name"
-          />
+          <MainQrCodeCard />
         </Grid>
 
         {/* Right Side - Tabs */}

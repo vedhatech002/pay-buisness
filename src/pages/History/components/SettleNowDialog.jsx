@@ -1,4 +1,3 @@
-// SettleNowDialog.jsx
 import React from "react";
 import {
   Dialog,
@@ -17,7 +16,6 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 const SettleNowDialog = ({ open, onClose }) => {
   return (
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
-      {/* Custom Header with Close Icon */}
       <Box
         display="flex"
         justifyContent="space-between"
@@ -34,7 +32,6 @@ const SettleNowDialog = ({ open, onClose }) => {
       </Box>
 
       <DialogContent dividers sx={{ px: 3, pt: 2 }}>
-        {/* Today's Total Collection */}
         <Box
           display="flex"
           justifyContent="space-between"
@@ -50,7 +47,6 @@ const SettleNowDialog = ({ open, onClose }) => {
           </Typography>
         </Box>
 
-        {/* Already Settled */}
         <Box display="flex" alignItems="center" gap={1} mb={1}>
           <CheckCircleIcon sx={{ color: "green" }} />
           <Typography fontWeight={600} color="green">
@@ -63,7 +59,6 @@ const SettleNowDialog = ({ open, onClose }) => {
 
         <Divider sx={{ my: 2 }} />
 
-        {/* Settlement Calculation Section */}
         <Typography
           fontSize={13}
           fontWeight={600}

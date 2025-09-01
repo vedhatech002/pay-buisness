@@ -1,8 +1,10 @@
-import { Box } from "@mui/material";
+import { Backdrop, Box, CircularProgress } from "@mui/material";
 import Header from "./Header/Header";
 import Sidebar, { drawerWidth } from "./SideBar/SideBar";
+import { useLoading } from "../../context/LoadingContext";
 
 export default function Layout({ children }) {
+  const { state } = useLoading();
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
@@ -38,6 +40,12 @@ export default function Layout({ children }) {
           {children}
         </Box>
       </Box>
+      <Backdrop
+        open={state.isLoading}
+        sx={{ color: "text.text", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </Box>
   );
 }

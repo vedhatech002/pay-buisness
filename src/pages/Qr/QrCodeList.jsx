@@ -73,7 +73,6 @@ function QrCodeList({
         onChange={handleChange}
       />
 
-      {/* QR List */}
       {tab === 0 ? (
         <Box>
           {qrList.map((qr, idx) => (
@@ -137,7 +136,7 @@ function QrCodeList({
       ) : (
         dummyData.map((item, index) => <QRStatusCard key={index} {...item} />)
       )}
-      {/* Footer Button */}
+
       <Box textAlign="center" mt={2}>
         <Button
           variant="contained"
@@ -147,7 +146,6 @@ function QrCodeList({
             backgroundColor: "primary.main",
             textTransform: "none",
             borderRadius: "8px",
-            // "&:hover": { backgroundColor: "#1B5E20" },
           }}
           onClick={onRequestMore}
         >

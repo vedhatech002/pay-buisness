@@ -18,7 +18,6 @@ import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import QRCode from "../../components/common/QrCode";
 
-// Reusable Component
 const QRStatusCard = ({
   qrValue,
   name,
@@ -37,7 +36,6 @@ const QRStatusCard = ({
   return (
     <Card sx={{ borderRadius: 2, boxShadow: 3 }}>
       <CardContent sx={{ "&:last-child": { pb: 1 } }}>
-        {/* Header with QR image and address */}
         <Stack direction="row" spacing={3} alignItems="center">
           <Box
             sx={{
@@ -65,7 +63,6 @@ const QRStatusCard = ({
           </Box>
         </Stack>
 
-        {/* Collapsible Status Box */}
         <Box
           sx={{
             backgroundColor: "#f1f8f3",
@@ -76,7 +73,6 @@ const QRStatusCard = ({
             mt: 2,
           }}
         >
-          {/* Header with current step */}
           <Stack
             direction="row"
             alignItems="center"

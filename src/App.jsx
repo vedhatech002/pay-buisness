@@ -1,12 +1,13 @@
 import { RouterProvider } from "react-router-dom";
-import Header from "./components/layouts/Header/Header";
-import Layout from "./components/layouts/Layout";
 import AppRouter from "./routes/AppRoutes";
+import { LoadingProvider } from "./context/LoadingContext";
 
 function App() {
   return (
     <>
-      <RouterProvider router={AppRouter} />
+      <LoadingProvider>
+        <RouterProvider router={AppRouter} />
+      </LoadingProvider>
     </>
   );
 }

@@ -1,4 +1,3 @@
-// src/components/home/SettlementCard.jsx
 import {
   Card,
   CardContent,

@@ -1,4 +1,3 @@
-// src/components/home/TransactionsCard.jsx
 import {
   Card,
   CardHeader,

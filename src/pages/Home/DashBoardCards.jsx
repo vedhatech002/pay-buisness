@@ -3,12 +3,7 @@ import {
   CardContent,
   Typography,
   Button,
-  LinearProgress,
-  List,
-  ListItem,
-  ListItemText,
   Box,
-  CircularProgress,
   Divider,
   Stack,
   IconButton,
@@ -16,13 +11,6 @@ import {
 import QRCode from "../../components/common/QrCode";
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-
-// Dummy Data
-const settlements = [
-  { name: "Ibrahim", amount: "+₹90", date: "23 Oct, 09:15 AM" },
-  { name: "Ibrahim", amount: "+₹90", date: "23 Oct, 09:15 AM" },
-  { name: "Ibrahim", amount: "+₹90", date: "23 Oct, 09:15 AM" },
-];
 
 export function ProfileCard() {
   const progress = 30;
@@ -35,7 +23,6 @@ export function ProfileCard() {
       }}
     >
       <CardContent sx={{ p: 3 }}>
-        {/* Title */}
         <Typography
           variant="overline"
           sx={{ fontWeight: 600, color: "text.text", letterSpacing: 1 }}
@@ -43,7 +30,6 @@ export function ProfileCard() {
           PROFILE
         </Typography>
 
-        {/* Progress + Checklist */}
         <Box
           sx={{
             display: "flex",
@@ -64,8 +50,8 @@ export function ProfileCard() {
               [`& .${gaugeClasses.valueText}`]: {
                 fontSize: 30,
                 fontWeight: 700,
-                color: "#61CE70 !important", // 👈 force green
-                fontFamily: "Gilroy, sans-serif", // 👈 use Gilroy font
+                color: "#61CE70 !important",
+                fontFamily: "Gilroy, sans-serif",
               },
               [`& .${gaugeClasses.valueArc}`]: {
                 fill: "#61CE70",
@@ -136,7 +122,7 @@ export function ProfileCard() {
   );
 }
 
-export function QRCodeCard() {
+export function QRCodeCard({ action }) {
   return (
     <Card
       sx={{
@@ -201,6 +187,7 @@ export function QRCodeCard() {
         </Box>
         <Divider sx={{ my: 2 }} />
         <Button
+          onClick={action}
           variant="contained"
           fullWidth
           sx={{
@@ -295,7 +282,6 @@ export const SummaryCard = ({
           </Box>
         ))}
 
-        {/* Button */}
         <Button
           fullWidth
           variant="contained"
