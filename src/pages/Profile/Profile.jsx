@@ -1,7 +1,10 @@
-import React from "react";
-import BannerCard from "../../components/common/BannerCard";
 import { Box, Grid } from "@mui/material";
+
+// Components
+import BannerCard from "../../components/common/BannerCard";
 import ProfileNavCard from "./ProfileNavCard";
+
+// Assets
 import BankIcon from "../../assets/bank.svg?react";
 import KYCIcon from "../../assets/kyc.svg?react";
 import BuisnessIcon from "../../assets/buisness.svg?react";
@@ -37,6 +40,16 @@ const cardItems = [
   },
 ];
 
+const buisnessItems = [
+  { icon: <SpeakerIcon />, label: "Smart Speaker" },
+  { icon: <PointOfSaleIcon />, label: "POS Machine" },
+];
+const managebuisnessItems = [
+  { icon: <SettingsIcon />, label: "Payment Settings" },
+  { icon: <GroupIcon />, label: "Manage Staff" },
+  { icon: <LanguageIcon />, label: "Change Language" },
+];
+
 const Profile = () => {
   return (
     <Box px={2}>
@@ -59,20 +72,13 @@ const Profile = () => {
         <Grid size={6}>
           <FeatureDisplaySection
             title="Business Services"
-            items={[
-              { icon: <SpeakerIcon />, label: "Smart Speaker" },
-              { icon: <PointOfSaleIcon />, label: "POS Machine" },
-            ]}
+            items={buisnessItems}
           />
         </Grid>
         <Grid size={6}>
           <FeatureDisplaySection
             title="Manage Business"
-            items={[
-              { icon: <SettingsIcon />, label: "Payment Settings" },
-              { icon: <GroupIcon />, label: "Manage Staff" },
-              { icon: <LanguageIcon />, label: "Change Language" },
-            ]}
+            items={managebuisnessItems}
           />
         </Grid>
       </Grid>
