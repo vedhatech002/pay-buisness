@@ -20,4 +20,28 @@ The design is based on the provided Figma file:
 
 ---
 
-## 📂 Folder Structure
+## 🚀 Installation
+
+**Clone the Repository**
+
+```
+https://github.com/vedhatech002/pay-buisness.git
+```
+
+**Install Packges**
+
+```
+npm install
+```
+
+**Start the frontend server**
+
+```
+npm run dev
+```
+
+**Mock API Server**
+
+```
+npm run mock-api
+```
